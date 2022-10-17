@@ -10,7 +10,7 @@ export default function Ground(props: ReflectorProps) {
   return (
     <Reflector resolution={1024} args={[8, 8]} {...props}>
       {(Material, props) => (
-        /* @ts-expect-error :: for ignore TS2590*/
+        /* @ts-expect-error :: for ignore TS2590 */
         <Material
           color="#f0f0f0"
           metalness={0}

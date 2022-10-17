@@ -1,0 +1,12 @@
+@tailwind components;
+
+@import url('https://rsms.me/inter/inter.css');
+
+@layer components {
+  .useIntersect-and-scrollcontrols h1 {
+    @apply absolute text-9xl font-medium;
+  }
+  .useIntersect-and-scrollcontrols a {
+    @apply pointer-events-auto text-black;
+  }
+}

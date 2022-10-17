@@ -1,4 +1,4 @@
-import { CameraShake, OrbitControls, softShadows } from '@react-three/drei';
+import { CameraShake, OrbitControls } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
 import { Bloom, EffectComposer } from '@react-three/postprocessing';
 import { KernelSize } from 'postprocessing';
@@ -10,8 +10,6 @@ import Rig from '../../components/reflectorplanes-and-bloom/Rig';
 import Triangle from '../../components/reflectorplanes-and-bloom/Triangle';
 
 import type { NextPage } from 'next';
-
-softShadows();
 
 const Page: NextPage = () => {
   return (

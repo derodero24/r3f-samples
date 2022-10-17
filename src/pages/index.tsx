@@ -16,6 +16,10 @@ const samples = [
     label: 'Reflectorplanes and Bloom',
     href: '/samples/reflectorplanes-and-bloom',
   },
+  {
+    label: 'useIntersect and ScrollControls',
+    href: '/samples/useIntersect-and-scrollcontrols',
+  },
 ];
 
 const Home: NextPage = () => {
