@@ -3,6 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@react-three/drei': ^9.35.1
   '@react-three/fiber': ^8.8.10
+  '@react-three/postprocessing': ^2.6.2
   '@tsconfig/strictest': ^1.0.2
   '@types/node': 18.11.0
   '@types/react': 18.0.21
@@ -19,6 +20,7 @@ specifiers:
   next-pwa: ^5.6.0
   next-themes: ^0.2.1
   postcss: ^8.4.18
+  postprocessing: ^6.28.7
   react: 18.2.0
   react-dom: 18.2.0
   react-icons: ^4.6.0
@@ -29,12 +31,14 @@ specifiers:
 dependencies:
   '@react-three/drei': 9.35.1_cpod6d3cr76qxhqbh6bdljlrqm
   '@react-three/fiber': 8.8.10_ee34sidbpuk5ebd4phepfgxxdi
+  '@react-three/postprocessing': 2.6.2_262c2muuipcp6qolooglcwzxqq
   '@types/three': 0.144.0
   autoprefixer: 10.4.12_postcss@8.4.18
   next: 12.3.1_6tziyx3dehkoeijunclpkpolha
   next-pwa: 5.6.0_r4fnhujxxwelquxkfzi3g5np24
   next-themes: 0.2.1_azq6kxkn3od7qdylwkyksrwopy
   postcss: 8.4.18
+  postprocessing: 6.28.7_three@0.145.0
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   react-icons: 4.6.0_react@18.2.0
@@ -1597,6 +1601,22 @@ packages:
       suspend-react: 0.0.8_react@18.2.0
       three: 0.145.0
       zustand: 3.7.2_react@18.2.0
+    dev: false
+
+  /@react-three/postprocessing/2.6.2_262c2muuipcp6qolooglcwzxqq:
+    resolution: {integrity: sha512-YvU3oH5Vb2UT+ekhhzHwMTvEYo50VoW8EYMQxmh9TzWaTohSB0GGDanJw5peUMDUgYS1gNjj9cpsk0w/z/7Qpg==}
+    peerDependencies:
+      '@react-three/fiber': '>=7.0'
+      react: '>=17.0'
+      three: '>=0.136.0'
+    dependencies:
+      '@react-three/fiber': 8.8.10_ee34sidbpuk5ebd4phepfgxxdi
+      postprocessing: 6.28.7_three@0.145.0
+      react: 18.2.0
+      react-merge-refs: 1.1.0
+      screen-space-reflections: 2.5.0_b5f6uvira3543yotpgkbl46a3a
+      three: 0.145.0
+      three-stdlib: 2.17.3_three@0.145.0
     dev: false
 
   /@rollup/plugin-babel/5.3.1_vy4anxjpv2s44kyfi2kxqu576u:
@@ -4106,6 +4126,15 @@ packages:
       picocolors: 1.0.0
       source-map-js: 1.0.2
 
+  /postprocessing/6.28.7_three@0.145.0:
+    resolution: {integrity: sha512-norsBlNIhDoNG2R0nki9C0bNEARIunE/s5W/4qH/Ozlg3m0dOOmBoY8JZhnmPild/+Jvq/UFEeHQRBvTc11WUg==}
+    engines: {node: '>= 0.13.2'}
+    peerDependencies:
+      three: '>= 0.125.0 < 0.145.0'
+    dependencies:
+      three: 0.145.0
+    dev: false
+
   /potpack/1.0.2:
     resolution: {integrity: sha512-choctRBIV9EMT9WGAZHn3V7t0Z2pMQyl0EZE6pFc/6ml3ssw7Dlf/oAOvFwjm1HVsqfQN8GfeFyJ+d8tRzqueQ==}
     dev: false
@@ -4387,6 +4416,16 @@ packages:
       '@types/json-schema': 7.0.11
       ajv: 6.12.6
       ajv-keywords: 3.5.2_ajv@6.12.6
+    dev: false
+
+  /screen-space-reflections/2.5.0_b5f6uvira3543yotpgkbl46a3a:
+    resolution: {integrity: sha512-fWSDMhJS0xwD3LTxRRch7Lb9NzxsR66sCmtDmAA7i+OGnghUrBBsrha85ng7StnCBaLq/BKmZ97dLxWd1XgWdQ==}
+    peerDependencies:
+      postprocessing: '>=6.28.0'
+      three: '>=0.141.0'
+    dependencies:
+      postprocessing: 6.28.7_three@0.145.0
+      three: 0.145.0
     dev: false
 
   /semver/6.3.0:
