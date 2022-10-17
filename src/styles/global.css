@@ -2,14 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  body {
-    @apply duration-300;
-    @apply bg-gray-100 text-gray-800;
-    @apply dark:bg-gray-800 dark:text-gray-100;
-  }
-}
-
 @layer components {
   .container {
     @apply max-w-4xl mx-auto px-4 py-2;
@@ -19,3 +11,5 @@
     @apply cursor-pointer text-xl duration-100 hover:opacity-75;
   }
 }
+
+@import url('./m1-scroll.css');
