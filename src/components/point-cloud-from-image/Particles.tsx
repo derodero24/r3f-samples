@@ -1,10 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 
+import { normalRand } from '../../utils';
 import { fragmentShader, vertexShader } from './shader';
-
-function normalRand() {
-  return (Math.random() - 0.5) * 2;
-}
 
 function ImagePixel(
   path: CanvasImageSource,

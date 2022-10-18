@@ -122,7 +122,7 @@ void main() {
   gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1.0);
   gl_PointSize =  2.0;
 }
-  `;
+`;
 
 export const fragmentShader = `
 void main() {
@@ -131,4 +131,4 @@ void main() {
 
   gl_FragColor = vec4(vec3(0.0), alpha);
 }
-  `;
+`;
