@@ -32,6 +32,10 @@ const samples = [
     label: 'Point Cloud from image',
     href: '/samples/point-cloud-from-image',
   },
+  {
+    label: 'Points Animation',
+    href: '/samples/points-animation',
+  },
 ];
 
 const Home: NextPage = () => {
