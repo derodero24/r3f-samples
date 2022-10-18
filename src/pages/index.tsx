@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import Link from 'next/link';
 
-import Layout from '../components/layouts/Layout';
+import Layout from '../components/home/Layout';
 
 import type { NextPage } from 'next';
 
@@ -19,6 +19,10 @@ const samples = [
   {
     label: 'useIntersect and ScrollControls',
     href: '/samples/useIntersect-and-scrollcontrols',
+  },
+  {
+    label: 'Point Cloud from image',
+    href: '/samples/point-cloud-from-image',
   },
 ];
 
