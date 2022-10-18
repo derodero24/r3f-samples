@@ -25,6 +25,10 @@ const samples = [
     href: '/samples/point-wave',
   },
   {
+    label: 'Points with simple shader',
+    href: '/samples/points-with-simple-shader',
+  },
+  {
     label: 'Point Cloud from image',
     href: '/samples/point-cloud-from-image',
   },
