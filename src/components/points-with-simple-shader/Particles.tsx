@@ -4,15 +4,13 @@ import { fragmentShader, vertexShader } from './shader';
 
 export default function Particles() {
   const count = 500;
-  const [positions, colors, alpha] = useMemo(() => {
-    const positions = Float32Array.from({ length: count * 3 }).map(
-      () => (Math.random() - 0.5) * 10,
-    );
-    const colors = Float32Array.from({ length: count * 3 }).map(() =>
-      Math.random(),
-    );
-    const alpha = Float32Array.from({ length: count }).map(() => Math.random());
-    return [positions, colors, alpha];
+  const { positions, colors } = useMemo(() => {
+    return {
+      positions: Float32Array.from({ length: count * 3 }).map(
+        () => (Math.random() - 0.5) * 10,
+      ),
+      colors: Float32Array.from({ length: count * 4 }).map(() => Math.random()),
+    };
   }, []);
 
   const shaderArgs = useMemo(() => ({ vertexShader, fragmentShader }), []);
@@ -28,15 +26,9 @@ export default function Particles() {
         />
         <bufferAttribute
           attach="attributes-color"
-          count={colors.length / 3}
-          itemSize={3}
+          count={colors.length / 4}
+          itemSize={4}
           array={colors}
-        />
-        <bufferAttribute
-          attach="attributes-alpha"
-          count={alpha.length}
-          itemSize={1}
-          array={alpha}
         />
       </bufferGeometry>
 

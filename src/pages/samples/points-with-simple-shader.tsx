@@ -1,7 +1,7 @@
 import { OrbitControls, Stats } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
 
-import Particles from '../../components/point-cloud-from-image/Particles';
+import Particles from '../../components/points-with-simple-shader/Particles';
 
 import type { NextPage } from 'next';
 
