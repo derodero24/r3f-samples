@@ -69,7 +69,7 @@ export default function Composition() {
       3 + 2 * (1 - r1),
     );
 
-    // left.current.classList.toggle('show', r3);
+    left.current.classList.toggle('show', r3);
     // right.current.classList.toggle('show', r3);
   });
 
