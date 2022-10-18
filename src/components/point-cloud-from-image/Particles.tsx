@@ -23,7 +23,6 @@ function ImagePixel(
   const data = ctx!.getImageData(0, 0, width, height).data;
   const position = [];
   const color = [];
-  const alpha = [];
 
   const wrange = width / 2;
   const hrange = height / 2;
@@ -46,11 +45,11 @@ function ImagePixel(
       const X = (px + normalRand() * randomness) * scale;
       const Y = (py + normalRand() * randomness) * scale;
 
-      position.push(X, Y, 0), color.push(r, g, b), alpha.push(a);
+      position.push(X, Y, 0), color.push(r, g, b, a);
     }
   }
 
-  return { position, color, alpha };
+  return { position, color };
 }
 
 export default function Particles() {
@@ -58,30 +57,26 @@ export default function Particles() {
 
   const [positions, setPositions] = useState<Float32Array>();
   const [colors, setColors] = useState<Float32Array>();
-  const [alphas, setAlphas] = useState<Float32Array>();
 
   useEffect(() => {
     const img = new Image();
     img.src = '/point-cloud-from-image/brain.png';
 
     img.addEventListener('load', () => {
-      const { position, color, alpha } = ImagePixel(
+      const { position, color } = ImagePixel(
         img,
         img.width,
         img.height,
         2.0, // 何pxに一回点を打つか
       );
-      console.log(position, color, alpha);
-      console.log(position.length / 3, color.length / 3, alpha.length);
       setPositions(Float32Array.from(position));
       setColors(Float32Array.from(color));
-      setAlphas(Float32Array.from(alpha));
     });
   }, []);
 
   return (
     <points>
-      {positions && colors && alphas && (
+      {positions && colors && (
         <bufferGeometry>
           <bufferAttribute
             attach="attributes-position"
@@ -91,15 +86,9 @@ export default function Particles() {
           />
           <bufferAttribute
             attach="attributes-color"
-            count={colors.length / 3}
-            itemSize={3}
+            count={colors.length / 4}
+            itemSize={4}
             array={colors}
-          />
-          <bufferAttribute
-            attach="attributes-alpha"
-            count={alphas.length}
-            itemSize={1}
-            array={alphas}
           />
         </bufferGeometry>
       )}
