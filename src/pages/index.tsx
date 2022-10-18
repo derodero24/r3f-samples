@@ -21,6 +21,10 @@ const samples = [
     href: '/samples/useIntersect-and-scrollcontrols',
   },
   {
+    label: 'Point Wave',
+    href: '/samples/point-wave',
+  },
+  {
     label: 'Point Cloud from image',
     href: '/samples/point-cloud-from-image',
   },
