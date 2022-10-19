@@ -1,4 +1,3 @@
-import { OrbitControls } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
 
 import Rig from '../../components/inside-the-room/Rig';
@@ -11,12 +10,12 @@ const Page: NextPage = () => {
     <div className="h-screen">
       <Canvas dpr={[1, 2]}>
         <color attach="background" args={['white']} />
-        <OrbitControls
+        {/* <OrbitControls
           makeDefault
           enableZoom={false}
           enableRotate={false}
           enablePan={false}
-        />
+        /> */}
         <Rig>
           <Room x={10} y={6} z={20} />
         </Rig>
