@@ -66,8 +66,11 @@ export default function Particles() {
     [],
   );
 
-  useFrame((_, delta) => {
+  useFrame((state, delta) => {
     if (!ref.current) return;
+    // 時間経過
+    shaderArgs.uniforms.uTime.value += delta;
+
     // 今の点群位置
     const positions = Array.from(ref.current.array);
 
@@ -76,12 +79,14 @@ export default function Particles() {
     const newPositions = [];
     for (let i = 0; i < positions.length; i++) {
       const now = positions[i]!;
-      const next = now + (points_data[dataKey][i]! - now) * speed;
+      let dist = points_data[dataKey][i]!;
+      // 画面が縦長のときはサイズを調整
+      if (state.viewport.aspect < 1) {
+        dist = dist * state.viewport.aspect;
+      }
+      const next = now + (dist - now) * speed;
       newPositions.push(next);
     }
-
-    // ランダム値
-    shaderArgs.uniforms.uTime.value += delta;
 
     // 更新
     ref.current.array = Float32Array.from(newPositions);
