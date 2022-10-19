@@ -36,6 +36,10 @@ const samples = [
     label: 'Points Animation',
     href: '/samples/points-animation',
   },
+  {
+    label: 'Inside the Room',
+    href: '/samples/inside-the-room',
+  },
 ];
 
 const Home: NextPage = () => {
