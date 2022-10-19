@@ -9,7 +9,7 @@ const Page: NextPage = () => {
   return (
     <div className="h-screen">
       <Canvas dpr={[1, 2]}>
-        <color attach="background" args={['white']} />
+        <color attach="background" args={['black']} />
         <OrbitControls makeDefault />
         <Stats />
         <Particles />

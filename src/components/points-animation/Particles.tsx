@@ -1,8 +1,10 @@
+import { useFBX } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import {
   BufferAttribute,
   BufferGeometry,
+  Mesh,
   SphereGeometry,
   TorusGeometry,
   TorusKnotGeometry,
@@ -23,23 +25,34 @@ export function geometryPositions(
   return Float32Array.from(chosed.flat());
 }
 
-const N_POINTS = 2000;
-
-const POINTS_DATA = {
-  sphere: geometryPositions(new SphereGeometry(2, 50, 50), N_POINTS),
-  torus: geometryPositions(new TorusGeometry(2, 0.8, 20, 120), N_POINTS),
-  torusknot: geometryPositions(
-    new TorusKnotGeometry(2, 0.3, 150, 16),
-    N_POINTS,
-  ),
-};
+const N_POINTS = 5000;
 
 const RANDS = Float32Array.from({ length: N_POINTS * 3 }).map(() =>
   normalRand(),
 );
 
 export default function Particles() {
-  const [dataKey, setDataKey] = useState<keyof typeof POINTS_DATA>('torusknot');
+  const fbx = useFBX('/points-animation/stanford-bunny.fbx');
+
+  const points_data = useMemo(
+    () => ({
+      sphere: geometryPositions(new SphereGeometry(2, 80, 80), N_POINTS),
+      torus: geometryPositions(new TorusGeometry(2, 0.8, 50, 140), N_POINTS),
+      torusknot: geometryPositions(
+        new TorusKnotGeometry(2, 0.3, 280, 22),
+        N_POINTS,
+      ),
+      bunny: geometryPositions(
+        (fbx.children[0] as Mesh).geometry,
+        N_POINTS,
+      ).map(x => x / 100),
+    }),
+    [fbx.children],
+  );
+
+  console.log(fbx.children[0] as Mesh);
+
+  const [dataKey, setDataKey] = useState<keyof typeof points_data>('sphere');
   const ref = useRef<BufferAttribute>(null);
 
   const shaderArgs = useMemo(
@@ -63,7 +76,7 @@ export default function Particles() {
     const newPositions = [];
     for (let i = 0; i < positions.length; i++) {
       const now = positions[i]!;
-      const next = now + (POINTS_DATA[dataKey][i]! - now) * speed;
+      const next = now + (points_data[dataKey][i]! - now) * speed;
       newPositions.push(next);
     }
 
@@ -81,6 +94,7 @@ export default function Particles() {
       setDataKey(prev => {
         if (prev === 'sphere') return 'torus';
         else if (prev === 'torus') return 'torusknot';
+        else if (prev === 'torusknot') return 'bunny';
         else return 'sphere';
       });
     }, 4_000);
@@ -93,9 +107,9 @@ export default function Particles() {
         <bufferAttribute
           ref={ref}
           attach="attributes-position"
-          count={POINTS_DATA.sphere.length / 3}
+          count={points_data.sphere.length / 3}
           itemSize={3}
-          array={POINTS_DATA.sphere}
+          array={points_data.sphere}
         />
         <bufferAttribute
           attach="attributes-rand"
