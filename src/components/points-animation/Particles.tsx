@@ -88,16 +88,19 @@ export default function Particles() {
     ref.current.needsUpdate = true;
   });
 
+  const changeObject = () => {
+    setDataKey(prev => {
+      if (prev === 'sphere') return 'torus';
+      else if (prev === 'torus') return 'torusknot';
+      else if (prev === 'torusknot') return 'bunny';
+      else return 'sphere';
+    });
+  };
+
   useEffect(() => {
-    // 5秒毎にオブジェクト変更
-    const timer = setInterval(() => {
-      setDataKey(prev => {
-        if (prev === 'sphere') return 'torus';
-        else if (prev === 'torus') return 'torusknot';
-        else if (prev === 'torusknot') return 'bunny';
-        else return 'sphere';
-      });
-    }, 4_000);
+    // 8秒毎にオブジェクト変更
+    changeObject();
+    const timer = setInterval(changeObject, 8_000);
     return () => clearInterval(timer);
   }, []);
 

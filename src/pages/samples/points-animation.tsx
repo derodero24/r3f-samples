@@ -8,7 +8,8 @@ import type { NextPage } from 'next';
 const Page: NextPage = () => {
   return (
     <div className="h-screen">
-      <Canvas dpr={[1, 2]}>
+      {/* fov: 視野角, 遠近感を和らげるために下げておく */}
+      <Canvas dpr={[1, 2]} camera={{ position: [0, 0, 10], fov: 40 }}>
         <color attach="background" args={['black']} />
         <OrbitControls makeDefault />
         <Stats />
