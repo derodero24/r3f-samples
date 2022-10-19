@@ -11,7 +11,14 @@ const Page: NextPage = () => {
       {/* fov: 視野角, 遠近感を和らげるために下げておく */}
       <Canvas dpr={[1, 2]} camera={{ position: [0, 0, 10], fov: 40 }}>
         <color attach="background" args={['black']} />
-        <OrbitControls makeDefault />
+        <OrbitControls
+          makeDefault
+          autoRotate
+          // enableZoom={false}
+          // enableRotate={false}
+          // enableDamping={false} // 慣性ありか
+          // enablePan={false}
+        />
         <Stats />
         <Particles />
       </Canvas>
