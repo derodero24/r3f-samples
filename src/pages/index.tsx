@@ -5,8 +5,6 @@ import Layout from '../components/home/Layout';
 
 import type { NextPage } from 'next';
 
-const ENV = process.env.NEXT_PUBLIC_ENV;
-
 const samples = [
   {
     label: 'M1 Mac scroll',
@@ -43,8 +41,6 @@ const samples = [
 ];
 
 const Home: NextPage = () => {
-  console.log('stage =', ENV);
-
   return (
     <Layout>
       <Head>
