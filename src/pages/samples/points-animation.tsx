@@ -1,5 +1,6 @@
-import { OrbitControls, Stats } from '@react-three/drei';
+import { Html, Loader, OrbitControls, Stats } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
+import { Suspense } from 'react';
 
 import Particles from '../../components/points-animation/Particles';
 
@@ -20,7 +21,15 @@ const Page: NextPage = () => {
           // enablePan={false}
         />
         <Stats />
-        <Particles />
+        <Suspense
+          fallback={
+            <Html>
+              <Loader />
+            </Html>
+          }
+        >
+          <Particles />
+        </Suspense>
       </Canvas>
     </div>
   );
