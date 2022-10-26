@@ -1,5 +1,6 @@
-import { OrbitControls, Stats } from '@react-three/drei';
+import { OrbitControls } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
+import { Perf } from 'r3f-perf';
 
 import Particles from '../../components/point-cloud-from-image/Particles';
 
@@ -11,7 +12,7 @@ const Page: NextPage = () => {
       <Canvas dpr={[1, 2]}>
         <color attach="background" args={['white']} />
         <OrbitControls makeDefault />
-        <Stats />
+        <Perf />
         <Particles />
       </Canvas>
     </div>

@@ -1,5 +1,6 @@
-import { Html, Loader, OrbitControls, Stats } from '@react-three/drei';
+import { Html, Loader, OrbitControls } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
+import { Perf } from 'r3f-perf';
 import { Suspense } from 'react';
 
 import Particles from '../../components/points-animation/Particles';
@@ -20,7 +21,7 @@ const Page: NextPage = () => {
           // enableDamping={false} // 慣性ありか
           // enablePan={false}
         />
-        <Stats />
+        <Perf />
         <Suspense
           fallback={
             <Html>
