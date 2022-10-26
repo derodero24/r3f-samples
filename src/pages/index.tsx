@@ -38,6 +38,10 @@ const samples = [
     label: 'Inside the Room',
     href: '/samples/inside-the-room',
   },
+  {
+    label: 'Grid by Shader',
+    href: '/samples/grid-by-shader',
+  },
 ];
 
 const Home: NextPage = () => {
