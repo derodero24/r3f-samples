@@ -8,8 +8,8 @@ export default function Layout(props: { children: ReactNode }) {
   return (
     <div className="flex min-h-screen flex-col">
       <header className="container flex justify-between">
-        <Link href="/">
-          <a className="text-2xl font-bold">React-Three-Fibar samples</a>
+        <Link href="/" className="text-2xl font-bold">
+          React-Three-Fibar samples
         </Link>
         <nav className="flex items-center space-x-6">
           <GitHubButton className="header-btn" />

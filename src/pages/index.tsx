@@ -55,10 +55,11 @@ const Home: NextPage = () => {
         <ul className="list-inside list-disc space-y-4">
           {samples.map(info => (
             <li key={info.href}>
-              <Link href={info.href}>
-                <a className="text-xl font-bold text-blue-500 underline">
-                  {info.label}
-                </a>
+              <Link
+                href={info.href}
+                className="text-xl font-bold text-blue-500 underline"
+              >
+                {info.label}
               </Link>
             </li>
           ))}
