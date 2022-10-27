@@ -42,6 +42,10 @@ const samples = [
     label: 'Grid by Shader',
     href: '/samples/grid-by-shader',
   },
+  {
+    label: 'Grid by Line',
+    href: '/samples/grid-by-line',
+  },
 ];
 
 const Home: NextPage = () => {

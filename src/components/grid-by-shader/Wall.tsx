@@ -1,4 +1,3 @@
-// import { EffectComposer } from 'postprocessing';
 import React, { useMemo } from 'react';
 import { DoubleSide, PlaneGeometry, ShaderMaterial } from 'three';
 
