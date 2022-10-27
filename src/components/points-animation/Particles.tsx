@@ -35,7 +35,7 @@ function randomOnSphere(r: number) {
   ];
 }
 
-const N_POINTS = 5000;
+const N_POINTS = 5_000;
 
 const RANDS = Float32Array.from({ length: N_POINTS * 3 }).map(() =>
   normalRand(),
@@ -127,13 +127,13 @@ export default function Particles() {
         <bufferAttribute
           ref={ref}
           attach="attributes-position"
-          count={points_data.sphere.length / 3}
+          count={N_POINTS}
           itemSize={3}
           array={points_data.sphere}
         />
         <bufferAttribute
           attach="attributes-rand"
-          count={RANDS.length / 3}
+          count={N_POINTS}
           itemSize={3}
           array={RANDS}
         />
