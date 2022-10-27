@@ -9,7 +9,7 @@ import type { NextPage } from 'next';
 const Page: NextPage = () => {
   return (
     <div className="h-screen">
-      <Canvas dpr={[1, 2]}>
+      <Canvas>
         <color attach="background" args={['white']} />
         <Rig>
           <Room x={10} y={6} z={20} />

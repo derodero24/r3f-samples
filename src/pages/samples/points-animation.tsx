@@ -11,12 +11,16 @@ const Page: NextPage = () => {
   return (
     <div className="h-screen">
       {/* fov: 視野角, 遠近感を和らげるために下げておく */}
-      <Canvas dpr={[1, 2]} camera={{ position: [0, 0, 10], fov: 40 }}>
+      {/* near, far: 描画領域はギリギリにしておくのが良き */}
+      <Canvas
+        dpr={[1, 2]}
+        camera={{ position: [0, 0, 10], fov: 40, near: 10 - 5, far: 10 + 5 }}
+      >
         <color attach="background" args={['black']} />
         <OrbitControls
           makeDefault
           autoRotate
-          // enableZoom={false}
+          enableZoom={false}
           // enableRotate={false}
           // enableDamping={false} // 慣性ありか
           // enablePan={false}

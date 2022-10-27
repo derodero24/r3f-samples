@@ -4,7 +4,7 @@ import { DoubleSide, PlaneGeometry, ShaderMaterial } from 'three';
 
 import { fragmentShader, vertexShader } from './shader';
 
-export default function Road() {
+export default function Wall() {
   const geometry = useMemo(() => new PlaneGeometry(8, 5), []);
   const material = useMemo(
     () =>
@@ -17,9 +17,10 @@ export default function Road() {
         },
         transparent: true,
         side: DoubleSide,
+        fog: true,
       }),
     [],
   );
 
-  return <mesh geometry={geometry} material={material}></mesh>;
+  return <mesh geometry={geometry} material={material} />;
 }

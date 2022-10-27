@@ -62,8 +62,6 @@ export default function Particles() {
     [fbx.children],
   );
 
-  console.log(fbx.children[0] as Mesh);
-
   const [dataKey, setDataKey] = useState<keyof typeof points_data>('sphere');
   const ref = useRef<BufferAttribute>(null);
 
