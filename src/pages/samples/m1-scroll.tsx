@@ -1,6 +1,7 @@
 import { ScrollControls, softShadows } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
 
+import Debug from '../../components/common/Debug';
 import Composition from '../../components/m1-scroll/Composition';
 
 import type { NextPage } from 'next';
@@ -20,6 +21,7 @@ const Page: NextPage = () => {
         <ScrollControls pages={3}>
           <Composition />
         </ScrollControls>
+        <Debug />
       </Canvas>
     </div>
   );

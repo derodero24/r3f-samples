@@ -5,6 +5,7 @@ import { KernelSize } from 'postprocessing';
 import { Suspense } from 'react';
 import { Euler, Vector3 } from 'three';
 
+import Debug from '../../components/common/Debug';
 import Ground from '../../components/reflectorplanes-and-bloom/Ground';
 import Rig from '../../components/reflectorplanes-and-bloom/Rig';
 import Triangle from '../../components/reflectorplanes-and-bloom/Triangle';
@@ -76,6 +77,7 @@ const Page: NextPage = () => {
           pitchFrequency={0.2}
           rollFrequency={0.2}
         />
+        <Debug />
       </Canvas>
     </div>
   );

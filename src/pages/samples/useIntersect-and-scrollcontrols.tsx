@@ -1,6 +1,7 @@
 import { Scroll, ScrollControls } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
 
+import Debug from '../../components/common/Debug';
 import Items from '../../components/useIntersect-and-scrollcontrols/Items';
 
 import type { NextPage } from 'next';
@@ -36,6 +37,7 @@ const Page: NextPage = () => {
             </h1>
           </Scroll>
         </ScrollControls>
+        <Debug />
       </Canvas>
     </div>
   );

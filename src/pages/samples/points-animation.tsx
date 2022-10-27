@@ -1,8 +1,8 @@
 import { Html, Loader, OrbitControls } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
-import { Perf } from 'r3f-perf';
 import { Suspense } from 'react';
 
+import Debug from '../../components/common/Debug';
 import Particles from '../../components/points-animation/Particles';
 
 import type { NextPage } from 'next';
@@ -21,7 +21,7 @@ const Page: NextPage = () => {
           // enableDamping={false} // 慣性ありか
           // enablePan={false}
         />
-        <Perf />
+        <Debug />
         <Suspense
           fallback={
             <Html>

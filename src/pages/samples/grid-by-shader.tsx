@@ -1,7 +1,7 @@
 import { OrbitControls } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
-import { Perf } from 'r3f-perf';
 
+import Debug from '../../components/common/Debug';
 import Road from '../../components/grid-by-shader/Road';
 
 import type { NextPage } from 'next';
@@ -14,7 +14,7 @@ const Page: NextPage = () => {
         <OrbitControls />
         <ambientLight intensity={1} />
         <Road />
-        <Perf />
+        <Debug />
       </Canvas>
     </div>
   );
