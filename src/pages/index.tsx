@@ -46,6 +46,10 @@ const samples = [
     label: 'Grid by Line',
     href: '/samples/grid-by-line',
   },
+  {
+    label: 'Endless Road',
+    href: '/samples/endless-road',
+  },
 ];
 
 const Home: NextPage = () => {
