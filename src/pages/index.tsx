@@ -50,6 +50,10 @@ const samples = [
     label: 'Endless Road',
     href: '/samples/endless-road',
   },
+  {
+    label: 'Smooth Scroll',
+    href: '/samples/smooth-scroll',
+  },
 ];
 
 const Home: NextPage = () => {
