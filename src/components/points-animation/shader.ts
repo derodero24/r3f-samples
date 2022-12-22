@@ -35,9 +35,10 @@ precision mediump float; // 精度修飾子
 void main() {
   // ■ → ●
   float dist = length(gl_PointCoord - vec2(0.5)); // 点の中心からの距離
-  if (dist > 0.5 ) discard;
+  // <0.5->1, ≧0.5->0
+  float alpha = 1. - step(0.5, dist);
 
   // 色セット
-  gl_FragColor = vec4(vec3(0.5), 1.);
+  gl_FragColor = vec4(vec3(0.5), alpha);
 }
 `;
