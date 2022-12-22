@@ -27,6 +27,10 @@ const samples = [
     href: '/samples/points-with-simple-shader',
   },
   {
+    label: 'Points with point material',
+    href: '/samples/points-with-point-material',
+  },
+  {
     label: 'Point Cloud from image',
     href: '/samples/point-cloud-from-image',
   },
