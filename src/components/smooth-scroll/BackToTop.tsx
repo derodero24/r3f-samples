@@ -9,7 +9,6 @@ interface Props {
 export default function BackToTop({ topRef }: Props) {
   const scrollToTop = () => {
     topRef.current?.scrollIntoView({ behavior: 'smooth', block: 'end' });
-    // window.scrollTo(0, 0);
   };
 
   return (
